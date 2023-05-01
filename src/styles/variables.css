@@ -1,0 +1,16 @@
+:root {
+    --background-color: #f8f3ed;
+
+    --primary-color: #daaa63;
+    --primary-color-highlight: #ca943d;
+
+    --border-radius: 6px;
+
+    --box-shadow: 0 2px 4px #d3ccc4;
+
+    --transition: all 0.15s ease-in-out;
+
+    --font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
