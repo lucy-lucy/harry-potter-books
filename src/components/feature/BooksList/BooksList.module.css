@@ -56,10 +56,8 @@
     font-size: 14px;
 }
 
-.itemButtonsWrapper {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: flex-start;
-    gap: 10px;
+.itemButtonWrapper {
+    min-width: 140px;
     margin-top: auto;
+    align-self: flex-start;
 }

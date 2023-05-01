@@ -6,19 +6,12 @@ import styles from './BooksList.module.css';
 interface BooksListProp {
     books: Book[];
     onAddBook: (id: number) => void;
-    onRemoveBook: (id: number) => void;
 }
 
-const BooksList = ({ books, onAddBook, onRemoveBook }: BooksListProp) => {
+const BooksList = ({ books, onAddBook }: BooksListProp) => {
     const handleAddBook = (id: number): () => void => {
         return () => {
             onAddBook(id);
-        };
-    };
-
-    const handleRemoveBook = (id: number): () => void => {
-        return () => {
-            onRemoveBook(id);
         };
     };
 
@@ -33,9 +26,8 @@ const BooksList = ({ books, onAddBook, onRemoveBook }: BooksListProp) => {
                     </div>
                     <p className={styles.itemDescription}>{book.author}</p>
                     <p className={styles.itemDescription}>{book.description}</p>
-                    <div className={styles.itemButtonsWrapper}>
+                    <div className={styles.itemButtonWrapper}>
                         <Button onClick={handleAddBook(book.id)}>Add to cart</Button>
-                        <Button onClick={handleRemoveBook(book.id)}>Remove</Button>
                     </div>
                 </div>
             </li>)}
