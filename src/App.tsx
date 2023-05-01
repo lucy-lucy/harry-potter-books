@@ -12,11 +12,11 @@ const App = () => {
     const totalPrice = useMemo(() => calculateCheapestPrice(cartItems), [cartItems]);
     const discount = useMemo(() => calculateDiscount(cartItems, totalPrice), [cartItems, totalPrice]);
 
-    const handleAddClick = useCallback((id: number): void => {
+    const handleAddBook = useCallback((id: number): void => {
         setCartItems((prevState) => [...prevState, id]);
     }, []);
 
-    const handleRemoveClick = (id: number): void => {
+    const handleRemove = (id: number): void => {
         const nextCartItems = [...cartItems];
         const lastCartItemIndex = nextCartItems.lastIndexOf(id);
 
@@ -33,14 +33,14 @@ const App = () => {
                 <h1>Harry Potter Books</h1>
             </header>
             <main className={styles.content}>
-                <BooksList books={books} onAddBook={handleAddClick}/>
+                <BooksList books={books} onAddBook={handleAddBook}/>
             </main>
             <aside className={styles.aside}>
                 <ShoppingCart
                     items={shoppingCartItems}
                     totalPrice={totalPrice}
                     discount={discount}
-                    onRemove={handleRemoveClick}
+                    onRemove={handleRemove}
                 />
             </aside>
         </div>
