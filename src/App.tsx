@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import books from './api/books.json';
 import styles from './App.module.css';
 import BooksList from './components/feature/BooksList/BooksList';
@@ -12,9 +12,9 @@ const App = () => {
     const totalPrice = useMemo(() => calculateCheapestPrice(cartItems), [cartItems]);
     const discount = useMemo(() => calculateDiscount(cartItems, totalPrice), [cartItems, totalPrice]);
 
-    const handleAddClick = (id: number): void => {
+    const handleAddClick = useCallback((id: number): void => {
         setCartItems((prevState) => [...prevState, id]);
-    };
+    }, []);
 
     const handleRemoveClick = (id: number): void => {
         const nextCartItems = [...cartItems];

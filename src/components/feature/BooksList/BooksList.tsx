@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { BOOK_PRICE } from '../../../constants/book-price';
 import { Book } from '../../../types/books';
 import Button from '../../ui/Button/Button';
@@ -8,7 +9,7 @@ interface BooksListProp {
     onAddBook: (id: number) => void;
 }
 
-const BooksList = ({ books, onAddBook }: BooksListProp) => {
+const BooksList = memo(({ books, onAddBook }: BooksListProp) => {
     const handleAddBook = (id: number): () => void => {
         return () => {
             onAddBook(id);
@@ -33,6 +34,6 @@ const BooksList = ({ books, onAddBook }: BooksListProp) => {
             </li>)}
         </ul>
     );
-};
+});
 
 export default BooksList;
