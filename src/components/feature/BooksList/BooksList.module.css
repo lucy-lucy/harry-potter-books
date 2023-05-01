@@ -1,0 +1,65 @@
+.list {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+    padding: 20px 14px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.item:hover {
+    box-shadow: var(--box-shadow);
+}
+
+.itemImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.itemTitle {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemTitleWrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.itemPrice {
+    color: var(--primary-color-highlight);
+    font-weight: 700;
+}
+
+.itemDescription {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.itemButtonsWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: auto;
+}
