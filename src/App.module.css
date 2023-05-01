@@ -1,0 +1,37 @@
+.wrapper {
+    display: grid;
+    grid-template-areas: 'header' 'content' 'aside';
+    gap: 20px;
+    padding: 20px;
+}
+
+.header {
+    grid-area: header;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.content {
+    grid-area: content;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        grid-template-areas:
+        'header header'
+        'content aside';
+        grid-template-columns: 1fr 320px;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr 420px;
+    }
+}
