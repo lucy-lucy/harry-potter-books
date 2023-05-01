@@ -28,6 +28,11 @@
         grid-template-columns: 1fr 320px;
         align-items: flex-start;
     }
+
+    .aside {
+        position: sticky;
+        top: 20px;
+    }
 }
 
 @media (min-width: 1024px) {
