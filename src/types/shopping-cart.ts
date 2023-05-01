@@ -3,3 +3,7 @@ export interface ShoppingCartItem {
     title: string;
     count: number;
 }
+
+export type CartItems = number[];
+
+export type CartItemCountById = { [key in number]: number };
