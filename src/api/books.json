@@ -1,22 +1,37 @@
 [
   {
     "id": 1,
-    "title": "Harry Potter and the Philosopher's Stone"
+    "title": "Harry Potter and the Philosopher's Stone",
+    "description": "The first adventure in the spellbinding Harry Potter saga - the series that changed the world of books forever Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive...",
+    "author": "J. K. Rowling",
+    "image": "https://images.thalia.media/00/-/2ff5c3fdddce49b3b83db8c77e133fba/harry-potter-1-and-the-philosopher-s-stone-gebundene-ausgabe-j-k-rowling-englisch.jpeg"
   },
   {
     "id": 2,
-    "title": "Harry Potter and the Chamber of Secrets"
+    "title": "Harry Potter and the Chamber of Secrets",
+    "description": "The second adventure in the spellbinding Harry Potter saga - the series that changed the world of books forever Harry Potter\"s summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys...",
+    "author": "J. K. Rowling",
+    "image": "https://images.thalia.media/00/-/5561d8e0d64b4f70a48a1e6dda51032a/harry-potter-2-and-the-chamber-of-secrets-taschenbuch-j-k-rowling-englisch.jpeg"
   },
   {
     "id": 3,
-    "title": "Harry Potter and the Prisoner of Azkaban"
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "description": "It\"s time to PASS THE MAGIC ON - with brand new children\"s editions of the classic and internationally bestselling series The third book in the global phenomenon series that changed the world of books forever When the Knight Bus crashes...",
+    "author": "J. K. Rowling",
+    "image": "https://images.thalia.media/00/-/51b22e1c9d32466f8d642596300776d6/harry-potter-3-and-the-prisoner-of-azkaban-gebundene-ausgabe-j-k-rowling-englisch.jpeg"
   },
   {
     "id": 4,
-    "title": "Harry Potter and the Goblet of Fire"
+    "title": "Harry Potter and the Goblet of Fire",
+    "description": "The fourth adventure in the spellbinding Harry Potter saga - the series that changed the world of books forever The Triwizard Tournament is to be held at Hogwarts. Only wizards who are over seventeen are allowed to enter - but that doesn\"t stop...",
+    "author": "J. K. Rowling",
+    "image": "https://images.thalia.media/00/-/065da908ae674a3fa3c83e39dd3cffd0/harry-potter-4-and-the-goblet-of-fire-gebundene-ausgabe-j-k-rowling-englisch.jpeg"
   },
   {
     "id": 5,
-    "title": "Harry Potter and the Order of the Phoenix"
+    "title": "Harry Potter and the Order of the Phoenix",
+    "description": "It\"s time to PASS THE MAGIC ON - with brand new children\"s editions of the classic and internationally bestselling series The fifth book in the global phenomenon series that changed the world of books forever Dark times have come to Hogwarts....",
+    "author": "J. K. Rowling",
+    "image": "https://images.thalia.media/00/-/91a19cb05bb743cab6ae108cd9628e38/harry-potter-5-and-the-order-of-the-phoenix-gebundene-ausgabe-j-k-rowling-englisch.jpeg"
   }
 ]
