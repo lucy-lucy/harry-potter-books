@@ -5,10 +5,11 @@ import styles from './ShoppingCart.module.css';
 interface ShoppingCartProps {
     items: ShoppingCartItem[];
     totalPrice: number;
+    discount: number;
     onRemove: (id: number) => void;
 }
 
-const ShoppingCart = ({ items, totalPrice, onRemove }: ShoppingCartProps) => {
+const ShoppingCart = ({ items, totalPrice, discount, onRemove }: ShoppingCartProps) => {
     const handleRemove = (id: number): () => void => {
         return () => {
             onRemove(id);
@@ -35,7 +36,10 @@ const ShoppingCart = ({ items, totalPrice, onRemove }: ShoppingCartProps) => {
                         </li>;
                     })}
                 </ul>
-                <span className={styles.cartPrice}>Total: {totalPrice.toFixed(2)} €</span>
+                <div className={styles.cartPriceWrapper}>
+                    <span className={styles.cartPrice}>Total: {totalPrice.toFixed(2)} €</span>
+                    {discount > 0 && <span className={styles.cartDiscount}>You saved {discount.toFixed(2)} €!</span>}
+                </div>
             </>}
         </div>
     );

@@ -4,12 +4,13 @@ import styles from './App.module.css';
 import BooksList from './components/feature/BooksList/BooksList';
 import ShoppingCart from './components/feature/ShoppingCart/ShoppingCart';
 import { CartItems } from './types/shopping-cart';
-import { calculateCheapestPrice, getShoppingCartItems } from './utils/shopping-cart';
+import { calculateCheapestPrice, calculateDiscount, getShoppingCartItems } from './utils/shopping-cart';
 
 const App = () => {
     const [cartItems, setCartItems] = useState<CartItems>([]);
     const shoppingCartItems = useMemo(() => getShoppingCartItems(cartItems, books), [cartItems]);
     const totalPrice = useMemo(() => calculateCheapestPrice(cartItems), [cartItems]);
+    const discount = useMemo(() => calculateDiscount(cartItems, totalPrice), [cartItems, totalPrice]);
 
     const handleAddClick = (id: number): void => {
         setCartItems((prevState) => [...prevState, id]);
@@ -38,6 +39,7 @@ const App = () => {
                 <ShoppingCart
                     items={shoppingCartItems}
                     totalPrice={totalPrice}
+                    discount={discount}
                     onRemove={handleRemoveClick}
                 />
             </aside>

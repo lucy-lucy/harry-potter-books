@@ -1,5 +1,5 @@
 import books from '../api/books.json';
-import { calculateCheapestPrice, getShoppingCartItems } from './shopping-cart';
+import { calculateCheapestPrice, calculateDiscount, getShoppingCartItems } from './shopping-cart';
 
 describe('Shopping cart', () => {
     describe('calculateCheapestPrice', () => {
@@ -49,6 +49,16 @@ describe('Shopping cart', () => {
 
         it('should return empty array if there are no items cart ids', () => {
             expect(getShoppingCartItems([], books)).toEqual([]);
+        });
+    });
+
+    describe('calculateDiscount', () => {
+        it('should return 0 if there is no discount', () => {
+            expect(calculateDiscount([1, 1, 1, 1, 1], 40)).toBe(0);
+        });
+
+        it('should calculate discount', () => {
+            expect(calculateDiscount([1, 1, 2, 2, 3, 3, 4, 5], 51.20)).toBe(12.80);
         });
     });
 });

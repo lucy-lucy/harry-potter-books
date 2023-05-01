@@ -6,7 +6,7 @@ describe('ShoppingCart', () => {
     it('should render an empty shopping cart', () => {
         const handleRemove = jest.fn();
 
-        render(<ShoppingCart items={[]} totalPrice={0} onRemove={handleRemove}/>);
+        render(<ShoppingCart items={[]} discount={0} totalPrice={0} onRemove={handleRemove}/>);
 
         expect(screen.getByRole('heading')).toHaveTextContent('Shopping cart');
         expect(screen.getByText('Your cart is empty')).toBeInTheDocument();
@@ -28,7 +28,8 @@ describe('ShoppingCart', () => {
         ];
         const totalPrice = 23.20;
 
-        render(<ShoppingCart items={shoppingCartItems} totalPrice={totalPrice} onRemove={handleRemove}/>);
+        render(<ShoppingCart items={shoppingCartItems} discount={0.8} totalPrice={totalPrice}
+                             onRemove={handleRemove}/>);
 
         expect(screen.getByRole('heading')).toHaveTextContent('Shopping cart');
         expect(screen.queryByText('Your cart is empty')).not.toBeInTheDocument();
@@ -39,5 +40,6 @@ describe('ShoppingCart', () => {
         expect(screen.getByText(shoppingCartItems[1].count)).toBeInTheDocument();
 
         expect(screen.getByText('Total: 23.20 €')).toBeInTheDocument();
+        expect(screen.getByText('You saved 0.80 €!')).toBeInTheDocument();
     });
 });

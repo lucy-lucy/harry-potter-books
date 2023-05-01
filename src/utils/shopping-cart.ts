@@ -61,7 +61,7 @@ export const calculateCheapestPrice = (cartItems: CartItems): number => {
         }
     }
 
-    return cheapestPrice;
+    return Number(cheapestPrice.toFixed(2));
 };
 
 export const getShoppingCartItems = (cartItems: CartItems, items: Book[]): ShoppingCartItem[] => {
@@ -82,4 +82,8 @@ export const getShoppingCartItems = (cartItems: CartItems, items: Book[]): Shopp
     });
 
     return shoppingCartItems;
+};
+
+export const calculateDiscount = (cartItems: CartItems, totalPrice: number): number => {
+    return Number(Math.max(cartItems.length * BOOK_PRICE - totalPrice, 0).toFixed(2));
 };

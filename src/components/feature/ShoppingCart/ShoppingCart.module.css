@@ -40,9 +40,20 @@
     color: var(--primary-color-highlight);
 }
 
+.cartPriceWrapper {
+    margin-top: 20px;
+}
+
 .cartPrice {
     display: block;
-    margin-top: 20px;
     font-size: 18px;
+    font-weight: 700;
+}
+
+.cartDiscount {
+    display: block;
+    margin-top: 8px;
+    color: var(--secondary);
+    font-size: 14px;
     font-weight: 700;
 }
