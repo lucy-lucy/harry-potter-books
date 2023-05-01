@@ -28,8 +28,12 @@ describe('ShoppingCart', () => {
         ];
         const totalPrice = 23.20;
 
-        render(<ShoppingCart items={shoppingCartItems} discount={0.8} totalPrice={totalPrice}
-                             onRemove={handleRemove}/>);
+        render(<ShoppingCart
+            items={shoppingCartItems}
+            discount={0.8}
+            totalPrice={totalPrice}
+            onRemove={handleRemove}
+        />);
 
         expect(screen.getByRole('heading')).toHaveTextContent('Shopping cart');
         expect(screen.queryByText('Your cart is empty')).not.toBeInTheDocument();
