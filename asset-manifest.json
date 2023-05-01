@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/harry-potter-books/static/css/main.89c64c79.css",
+    "main.js": "/harry-potter-books/static/js/main.3f47e24f.js",
+    "static/media/Poppins-Regular.ttf": "/harry-potter-books/static/media/Poppins-Regular.4211496d0e075ffe7c2f.ttf",
+    "static/media/Poppins-Bold.ttf": "/harry-potter-books/static/media/Poppins-Bold.300a4da54f1e6258b6f7.ttf",
+    "index.html": "/harry-potter-books/index.html",
+    "main.89c64c79.css.map": "/harry-potter-books/static/css/main.89c64c79.css.map",
+    "main.3f47e24f.js.map": "/harry-potter-books/static/js/main.3f47e24f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89c64c79.css",
+    "static/js/main.3f47e24f.js"
+  ]
+}
