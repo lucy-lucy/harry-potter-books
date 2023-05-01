@@ -1,25 +1,29 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import books from './api/books.json';
 import styles from './App.module.css';
 import BooksList from './components/feature/BooksList/BooksList';
-import { calculateCheapestPrice } from './utils/calculate-cheapest-price';
+import ShoppingCart from './components/feature/ShoppingCart/ShoppingCart';
+import { CartItems } from './types/shopping-cart';
+import { calculateCheapestPrice, getShoppingCartItems } from './utils/shopping-cart';
 
 const App = () => {
-    const [cart, setCart] = useState<number[]>([]);
+    const [cartItems, setCartItems] = useState<CartItems>([]);
+    const shoppingCartItems = useMemo(() => getShoppingCartItems(cartItems, books), [cartItems]);
+    const totalPrice = useMemo(() => calculateCheapestPrice(cartItems), [cartItems]);
 
     const handleAddClick = (id: number): void => {
-        setCart((prevState) => [...prevState, id]);
+        setCartItems((prevState) => [...prevState, id]);
     };
 
     const handleRemoveClick = (id: number): void => {
-        const nextCart = [...cart];
-        const lastCartItemIndex = cart.lastIndexOf(id);
+        const nextCartItems = [...cartItems];
+        const lastCartItemIndex = nextCartItems.lastIndexOf(id);
 
         if (lastCartItemIndex !== -1) {
-            nextCart.splice(lastCartItemIndex, 1);
+            nextCartItems.splice(lastCartItemIndex, 1);
         }
 
-        setCart(nextCart);
+        setCartItems(nextCartItems);
     };
 
     return (
@@ -28,14 +32,14 @@ const App = () => {
                 <h1>Harry Potter Books</h1>
             </header>
             <main className={styles.content}>
-                {books.length > 0 &&
-                    <BooksList books={books} onAddBook={handleAddClick} onRemoveBook={handleRemoveClick}/>}
+                <BooksList books={books} onAddBook={handleAddClick}/>
             </main>
             <aside className={styles.aside}>
-                <ul>
-                    {cart.map((cartItem, index) => <li key={index}>{cartItem}</li>)}
-                    Price: {calculateCheapestPrice(cart)}
-                </ul>
+                <ShoppingCart
+                    items={shoppingCartItems}
+                    totalPrice={totalPrice}
+                    onRemove={handleRemoveClick}
+                />
             </aside>
         </div>
     );
