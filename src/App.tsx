@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import books from './api/books.json';
-import { calculateCheapestPrice } from './utils/cheapest-price';
+import { calculateCheapestPrice } from './utils/calculate-cheapest-price';
 
 const App = () => {
     const [cart, setCart] = useState<number[]>([]);
