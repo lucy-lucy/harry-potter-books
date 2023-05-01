@@ -1,4 +1,4 @@
-# Harry Potter Books
+# Harry Potter Books 🪄
 
 Helps to calculate the cheapest offer for the customer.
 
